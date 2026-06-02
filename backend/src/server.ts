@@ -9,9 +9,6 @@ dotenv.config();
 const app = express();
 const PORT = Number(process.env.PORT || 10000);
 
-const API_URL = (import.meta as any).env.VITE_API_URL || '';
-console.log("API_URL =", import.meta.env.VITE_API_URL);
-
 // Enable CORS allowing custom frontend origins or fallback to wildcards
 const allowedOrigins = [
   process.env.FRONTEND_URL,
@@ -264,7 +261,7 @@ app.get('/api/health', (req: Request, res: Response) => {
 });
 
 // POST /api/check-username
-app.post(`${API_URL}/api/check-username`, async (req: Request, res: Response, next: NextFunction) => {
+app.post('/api/check-username', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { username } = req.body;
     if (!username || typeof username !== 'string') {
