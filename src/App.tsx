@@ -8,7 +8,9 @@ import {
 } from 'lucide-react';
 import { PlatformResult, DomainResult, SuggestionResult } from './types';
 
-const API_URL = import.meta.env.VITE_API_URL;
+
+const API_URL = (import.meta as any).env.VITE_API_URL || '';
+console.log("API_URL =", import.meta.env.VITE_API_URL);
 
 // Supported networks informational registry
 const SOCIAL_NETWORKS_INFO = [
