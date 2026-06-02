@@ -197,7 +197,7 @@ export default function App() {
       const response = await fetch(`${API_URL}/api/check-domains`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ domainname: domainQuery.trim() }),
+        body: JSON.stringify({ domainName: domainQuery.trim() }),
       });
 
       if (!response.ok) {
