@@ -12,6 +12,9 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
+const API_URL = (import.meta as any).env.VITE_API_URL || '';
+console.log("API_URL =", import.meta.env.VITE_API_URL);
+
 app.use(cors());
 app.use(express.json());
 
@@ -238,7 +241,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // POST /api/check-username
-app.post('/api/check-username', async (req, res) => {
+app.post(`${API_URL}/api/check-username`, async (req, res) => {
   const { username } = req.body;
   if (!username || typeof username !== 'string') {
     return res.status(400).json({ error: 'Username must be a valid string.' });
