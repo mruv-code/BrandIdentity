@@ -194,10 +194,10 @@ export default function App() {
     setCheckedDomain(domainQuery.trim());
 
     try {
-      const response = await fetch(`${API_URL}/api/check-username`, {
+      const response = await fetch(`${API_URL}/api/check-domains`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: domainQuery.trim() }),
+        body: JSON.stringify({ domainname: domainQuery.trim() }),
       });
 
       if (!response.ok) {
