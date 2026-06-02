@@ -1,0 +1,6 @@
+{
+  "name": "BrandClaim",
+  "description": "Premium SaaS-style tool to instantly check username and brand-name availability across major social networks and domain extensions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

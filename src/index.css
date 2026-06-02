@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Hide scrollbars completely while keeping functional scrolling */
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.blog-content h2 {
+  font-size: 1.625rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
+.blog-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #60a5fa; /* blue-400 */
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.blog-content p {
+  color: #d4d4d8; /* zinc-300 */
+  font-size: 0.975rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.blog-content blockquote {
+  border-left: 3px solid #3b82f6;
+  padding: 1rem 1.25rem;
+  font-style: italic;
+  color: #a1a1aa; /* zinc-400 */
+  margin: 2rem 0;
+  background-color: rgba(59, 130, 246, 0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.blog-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #d4d4d8;
+  font-size: 0.975rem;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.blog-content strong {
+  color: #ffffff;
+  font-weight: 600;
+}
