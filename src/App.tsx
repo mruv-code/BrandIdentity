@@ -8,6 +8,8 @@ import {
 } from 'lucide-react';
 import { PlatformResult, DomainResult, SuggestionResult } from './types';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 // Supported networks informational registry
 const SOCIAL_NETWORKS_INFO = [
   { id: 'instagram', name: 'Instagram', desc: 'Verify @handles on the world\'s top visual network.', color: 'from-pink-600/10 to-purple-600/10 border-pink-500/10 hover:border-pink-500/30 text-pink-400' },
@@ -111,7 +113,7 @@ export default function App() {
       setAiError(null);
       setCheckedUsername(query.trim());
       
-      fetch('/api/check-username', {
+      fetch(`${API_URL}/api/check-username`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: query.trim() }),
@@ -152,7 +154,7 @@ export default function App() {
     setCheckedUsername(username.trim());
 
     try {
-      const response = await fetch('/api/check-username', {
+      const response = await fetch(`${API_URL}/api/check-username`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.trim() }),
@@ -190,7 +192,7 @@ export default function App() {
     setCheckedDomain(domainQuery.trim());
 
     try {
-      const response = await fetch('/api/check-domains', {
+      const response = await fetch(`${API_URL}/api/check-username`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ domainName: domainQuery.trim() }),
@@ -217,7 +219,7 @@ export default function App() {
     setIsAiLoading(true);
     setAiError(null);
     try {
-      const response = await fetch('/api/brand-suggestions', {
+      const response = await fetch(`${API_URL}/api/brand-suggestions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
