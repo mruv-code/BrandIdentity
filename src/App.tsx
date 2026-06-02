@@ -197,7 +197,7 @@ export default function App() {
       const response = await fetch(`${API_URL}/api/check-username`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ domainName: domainQuery.trim() }),
+        body: JSON.stringify({ username: domainQuery.trim() }),
       });
 
       if (!response.ok) {
